@@ -25,8 +25,8 @@ export STARTUPWMCLASS=gearlever # For Wayland, this is 'it.mijorus.gearlever', s
 # Deploy dependencies
 quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
-             /usr/lib/unsquashfs \
              /usr/lib/libgirepository* \
+             /usr/lib/unsquashfs \
              /usr/bin/dwarfs \
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
