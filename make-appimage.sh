@@ -26,7 +26,7 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
              /usr/bin/dwarfsck \
-             /usr/bin/squashfuse \
+             /usr/bin/unsquashfs \
              /usr/share/icons/hicolor # Icons are missing on Fedora, so deploying all icons gets rid of this problem
 
 # Turn AppDir into AppImage
