@@ -33,7 +33,8 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/awk \
              /usr/bin/cat \
              /usr/bin/readelf \
-             /usr/bin/chmod
+             /usr/bin/chmod \
+             /usr/bin/ln
              # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it, so it's used from the host
              # bundling 'arch' doesn't make sense, this should be done in Python directly, idk why's this used from the host
              # bundling '7zip' doesn't work for extracting AppImages, but simple AppImage extract works, so idk why this is used at all, anyway, this will get used from the host if available
