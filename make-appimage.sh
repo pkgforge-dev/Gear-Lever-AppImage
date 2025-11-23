@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eu
+set -eux
 
 ARCH=$(uname -m)
 VERSION=$(pacman -Q gearlever | awk '{print $2; exit}')
