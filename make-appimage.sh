@@ -26,12 +26,7 @@ quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
              /usr/share/gearlever \
              /usr/lib/libgirepository* \
-             /usr/bin/mksquashfs \
              /usr/bin/unsquashfs \
-             /usr/bin/sqfscat \
-             /usr/bin/sqfstar \
-             /usr/bin/dwarfs \
-             /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
              /usr/bin/dwarfsck \
              /usr/bin/od \
