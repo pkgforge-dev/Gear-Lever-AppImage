@@ -41,9 +41,10 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/chmod \
              /usr/bin/arch \
              /usr/bin/7z
-
+             # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it
+             
 # For some reason, Gear Lever calls 7z - 7zz, so just link it to 7zz to make it compatible
-ln -sf ./AppDir/bin/7zz ./AppDir/bin/7z
+ln -sf ./AppDir/bin/7z ./AppDir/bin/7zz
 
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
