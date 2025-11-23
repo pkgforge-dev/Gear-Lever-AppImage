@@ -39,16 +39,10 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/cat \
              /usr/bin/readelf \
              /usr/bin/chmod
-             # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it
-             # bundling 'arch' doesn't make sense
-             # bundling '7zip' doesn't work for extracting AppImages, but simple AppImage extract works, so idk why this is used at all
+             # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it, so it's used from the host
+             # bundling 'arch' doesn't make sense, this should be done in Python directly, idk why's this used from the host
+             # bundling '7zip' doesn't work for extracting AppImages, but simple AppImage extract works, so idk why this is used at all, anyway, this will get used from the host if available
              
-# For some reason, Gear Lever calls 7z - 7zz, so just symlink it to 7zz to make it compatible
-(
-cd ./AppDir/bin/
-ln -sf 7z 7zz
-)
-
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
 sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gearlever
