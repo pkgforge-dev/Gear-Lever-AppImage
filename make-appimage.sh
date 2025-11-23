@@ -22,6 +22,7 @@ export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=gearlever # For Wayland, this is 'it.mijorus.gearlever', so this needs to be changed in desktop file manually by the user in that case until some potential automatic fix exists for this
 
 # Deploy dependencies
+quick-sharun --make-static-bin /usr/bin/od /usr/bin/awk /usr/bin/cat /usr/bin/readelf /usr/bin/chmod /usr/bin/7z /usr/bin/file /usr/bin/arch
 quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
              /usr/share/gearlever \
@@ -33,16 +34,7 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/dwarfs \
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
-             /usr/bin/dwarfsck \
-             /usr/bin/od \
-             /usr/bin/awk \
-             /usr/bin/cat \
-             /usr/bin/readelf \
-             /usr/bin/chmod \
-             /usr/bin/7z \
-             /usr/lib/7zip
-             # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it
-             # bundling 'arch' doesn't make sense
+             /usr/bin/dwarfsck
              
 # For some reason, Gear Lever calls 7z - 7zz, so just symlink it to 7zz to make it compatible
 (
