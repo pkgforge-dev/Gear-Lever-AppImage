@@ -42,8 +42,12 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/readelf \
              /usr/bin/file \
              /usr/bin/chmod \
-             /usr/bin/arch
+             /usr/bin/arch \
+             /usr/bin/7z
 quick-sharun /usr/bin/unsquashfs -- --help # This one needs to be called separately with some different flag, as just running it itself without file argument triggers the -e and crashes the build
+
+# For some reason, Gear Lever calls 7z - 7zz, so just link it to 7zz to make it compatible
+ln -sf ./AppDir/bin/7zz ./AppDir/bin/7z
 
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
@@ -57,4 +61,3 @@ rm -f ./AppDir/bin/get_appimage_offset
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
-
