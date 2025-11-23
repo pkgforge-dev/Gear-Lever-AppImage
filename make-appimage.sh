@@ -14,16 +14,12 @@ export DEPLOY_SYS_PYTHON=1
 export DEPLOY_OPENGL=1
 export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
-export PATH_MAPPING='
-       /usr/lib/gearlever:${SHARUN_DIR}/lib/gearlever
-'
 export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=gearlever # For Wayland, this is 'it.mijorus.gearlever', so this needs to be changed in desktop file manually by the user in that case until some potential automatic fix exists for this
 
 # Deploy dependencies
 quick-sharun /usr/bin/gearlever \
-             /usr/lib/gearlever \
              /usr/share/gearlever \
              /usr/lib/libgirepository* \
              /usr/bin/unsquashfs \
@@ -43,12 +39,10 @@ quick-sharun /usr/bin/gearlever \
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
 sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gearlever
-
-# Gear lever uses a bash script to get offset that depends on readelf
-# Replace it for a POSIX alternative that does not need bash
-cp -v ./get_appimage_offset ./AppDir/lib/gearlever
-chmod +x ./AppDir/lib/gearlever/get_appimage_offset
-rm -f ./AppDir/bin/get_appimage_offset
+# Patch AUR's modification back to use 'get_appimage_offset' in PATH
+cp -v /usr/lib/gearlever/get_appimage_offset ./AppDir/bin/get_appimage_offset
+chmod +x ./AppDir/bin/get_appimage_offset
+sed -i 's|/usr/lib/get_appimage_offset|get_appimage_offset|g' ./AppDir/share/gearlever/gearlever/providers/AppImageProvider.py
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
