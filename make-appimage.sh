@@ -30,7 +30,6 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/mksquashfs \
              /usr/bin/sqfscat \
              /usr/bin/sqfstar \
-             /usr/bin/unsquashfs \
              # Dwarfs tools
              /usr/bin/dwarfs \
              /usr/bin/mkdwarfs \
@@ -44,6 +43,7 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/file \
              /usr/bin/chmod \
              /usr/bin/arch
+quick-sharun /usr/bin/unsquashfs -- --help # This one needs to be called separately with some different flag, as just running it itself without file argument triggers the -e and crashes the build
 
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
