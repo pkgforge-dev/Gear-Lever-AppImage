@@ -37,8 +37,8 @@ More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/
 
 ## Known quirk
 
-- This AppImage has a mandatory dependency on `file` and `arch` program from the host system for the AppImage to work (upstream has a mandatory requirement for `arch` dependency only, while `file` is installed for flatpak).  
-  `7z` (named as `7zz`) is an optional dependency for extracting AppImages, as extracting AppImages works through `unsquashfs`, `dwarfsextract` and `--appimage-extract` flag.
+- This AppImage has a mandatory dependency on `file` and `uname` program from the host system for the AppImage to work (upstream has a mandatory requirement for `arch` dependency only, while `file` is installed for flatpak).  
+  `7z` is an optional dependency for extracting AppImages, as extracting AppImages works through `unsquashfs`, `dwarfsextract` and `--appimage-extract` flag.
   - It is WIP to make those dependencies bundled-in too to get rid of this quirk.  
     Arch's `file` package has some bug where we wait for it to get fixed, which is filled-in here:  
     https://bbs.archlinux.org/viewtopic.php?pid=2274027#p2274027
