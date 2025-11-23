@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eux
+set -eu
 
 ARCH=$(uname -m)
 VERSION=$(pacman -Q gearlever | awk '{print $2; exit}')
@@ -26,17 +26,15 @@ quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
              /usr/share/gearlever \
              /usr/lib/libgirepository* \
-             # Squashfs-tools
-             /usr/bin/mksquashfs \
+             /usr/bin/mksquashfs \ # Squashfs-tools       
+             /usr/bin/unsquashfs \
              /usr/bin/sqfscat \
              /usr/bin/sqfstar \
-             # Dwarfs tools
-             /usr/bin/dwarfs \
+             /usr/bin/dwarfs \ # Dwarfs tools
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
              /usr/bin/dwarfsck \
-             # Some coreutils and binutils dependencies
-             /usr/bin/od \
+             /usr/bin/od \ # Some coreutils and binutils dependencies
              /usr/bin/awk \
              /usr/bin/cat \
              /usr/bin/readelf \
@@ -44,7 +42,6 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/chmod \
              /usr/bin/arch \
              /usr/bin/7z
-quick-sharun /usr/bin/unsquashfs -- --help # This one needs to be called separately with some different flag, as just running it itself without file argument triggers the -e and crashes the build
 
 # For some reason, Gear Lever calls 7z - 7zz, so just link it to 7zz to make it compatible
 ln -sf ./AppDir/bin/7zz ./AppDir/bin/7z
