@@ -39,5 +39,12 @@ quick-sharun /usr/bin/gearlever \
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
 sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gearlever
 
+# Gear lever uses a bash script to get offset that depends on readelf
+# Replace it for a POSIX alternative that does not need bash
+cp -v ./get_appimage_offset ./AppDir/lib/gearlever
+chmod +x ./AppDir/lib/gearlever/get_appimage_offset
+rm -f ./AppDir/bin/get_appimage_offset
+
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
+
