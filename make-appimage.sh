@@ -26,7 +26,6 @@ quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
              /usr/share/gearlever \
              /usr/lib/libgirepository* \
-             /usr/bin/mksquashfs \ # Squashfs-tools       
              /usr/bin/sqfscat \
              /usr/bin/sqfstar \
              /usr/bin/dwarfs \ # Dwarfs tools
@@ -42,6 +41,7 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/arch \
              /usr/bin/7z
 quick-sharun /usr/bin/unsquashfs -- -h # This is needed, because running unsquashfs by itself without any options triggers set -e and then build fails
+quick-sharun /usr/bin/mksquashfs -- -h 
 
 # For some reason, Gear Lever calls 7z - 7zz, so just link it to 7zz to make it compatible
 ln -sf ./AppDir/bin/7zz ./AppDir/bin/7z
