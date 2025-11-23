@@ -26,14 +26,24 @@ quick-sharun /usr/bin/gearlever \
              /usr/lib/gearlever \
              /usr/share/gearlever \
              /usr/lib/libgirepository* \
+             # Squashfs-tools
              /usr/bin/mksquashfs \
              /usr/bin/sqfscat \
              /usr/bin/sqfstar \
-             /usr/lib/unsquashfs \
+             /usr/bin/unsquashfs \
+             # Dwarfs tools
              /usr/bin/dwarfs \
              /usr/bin/mkdwarfs \
              /usr/bin/dwarfsextract \
              /usr/bin/dwarfsck \
+             # Some coreutils and binutils dependencies
+             /usr/bin/od \
+             /usr/bin/awk \
+             /usr/bin/cat \
+             /usr/bin/readelf \
+             /usr/bin/file \
+             /usr/bin/chmod \
+             /usr/bin/arch
 
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
