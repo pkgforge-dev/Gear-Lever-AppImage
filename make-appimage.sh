@@ -42,7 +42,7 @@ sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/loca
 # Patch AUR's modification back to use 'get_appimage_offset' in PATH
 cp -v /usr/lib/gearlever/get_appimage_offset ./AppDir/bin/get_appimage_offset
 chmod +x ./AppDir/bin/get_appimage_offset
-sed -i 's|/usr/lib/get_appimage_offset|get_appimage_offset|g' ./AppDir/share/gearlever/gearlever/providers/AppImageProvider.py
+sed -i 's|/usr/lib/gearlever/get_appimage_offset|get_appimage_offset|g' ./AppDir/share/gearlever/gearlever/providers/AppImageProvider.py
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
