@@ -38,7 +38,6 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/awk \
              /usr/bin/cat \
              /usr/bin/readelf \
-             /usr/bin/file \
              /usr/bin/chmod \
              /usr/bin/arch \
              /usr/bin/7z
