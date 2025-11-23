@@ -15,6 +15,16 @@ AppImage made using [sharun](https://github.com/VHSgunzo/sharun), which makes it
 
 **This AppImage bundles everything and should work on any linux distro, even on musl based ones.**
 
+It is possible that this appimage may fail to work with appimagelauncher, I recommend these alternatives instead: 
+
+* [AM](https://github.com/ivan-hc/AM) `am -i gearlever` or `appman -i gearlever`
+
+* [dbin](https://github.com/xplshn/dbin) `dbin install gearlever.appimage`
+
+* [soar](https://github.com/pkgforge/soar) `soar install gearlever`
+
+This appimage works without fuse2 as it can use fuse3 instead, it can also work without fuse at all thanks to the [uruntime](https://github.com/VHSgunzo/uruntime)
+
 <details>
   <summary><b><i>raison d'être</i></b></summary>
     <img src="https://github.com/user-attachments/assets/29576c50-b39c-46c3-8c16-a54999438646" alt="Inspiration Image">
@@ -22,3 +32,11 @@ AppImage made using [sharun](https://github.com/VHSgunzo/sharun), which makes it
 </details>
 
 More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
+
+---
+
+## Known quirk
+
+- This AppImage has a mandatory dependency on `file` and `arch` program from the host system for the AppImage to work (upstream has a mandatory requirement for `arch` dependency only).  
+  `7z` (named as `7zz`) is an optional dependency for extracting AppImages, as extracting AppImages works through `unsquashfs`, `dwarfsextract` and `--appimage-extract` flag.
+  - It is in work to make those dependencies bundled-in too to get rid of this quirk
