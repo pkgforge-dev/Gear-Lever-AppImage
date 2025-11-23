@@ -17,7 +17,7 @@ export GTK_DIR=gtk-4.0
 export PATH_MAPPING='
        /usr/lib/gearlever:${SHARUN_DIR}/lib/gearlever
 '
-export EXEC_WRAPPER=1
+export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=gearlever # For Wayland, this is 'it.mijorus.gearlever', so this needs to be changed in desktop file manually by the user in that case until some potential automatic fix exists for this
 
