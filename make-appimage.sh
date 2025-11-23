@@ -39,7 +39,6 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/cat \
              /usr/bin/readelf \
              /usr/bin/chmod \
-             /usr/bin/7z \
              /usr/lib/7zip
              # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it
              # bundling 'arch' doesn't make sense
