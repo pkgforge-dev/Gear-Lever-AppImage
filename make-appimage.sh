@@ -38,10 +38,10 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/awk \
              /usr/bin/cat \
              /usr/bin/readelf \
-             /usr/bin/chmod \
-             /usr/lib/7zip
+             /usr/bin/chmod
              # bundling 'file' doesn't work for checking AppImages for some reason, so I'll skip it
              # bundling 'arch' doesn't make sense
+             # bundling '7zip' doesn't work for extracting AppImages, but simple AppImage extract works, so idk why this is used at all
              
 # For some reason, Gear Lever calls 7z - 7zz, so just symlink it to 7zz to make it compatible
 (
