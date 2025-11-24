@@ -46,7 +46,7 @@ chmod +x ./AppDir/bin/get_appimage_offset
 sed -i 's|/usr/lib/gearlever/get_appimage_offset|get_appimage_offset|g' ./AppDir/share/gearlever/gearlever/providers/AppImageProvider.py
 
 # Set gsettings to save to keyfile
-echo 'GSETTINGS_BACKEND=keyfile' ./AppDir/.env
+echo "GSETTINGS_BACKEND=keyfile" >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
