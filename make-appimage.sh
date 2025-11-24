@@ -29,12 +29,12 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/awk \
              /usr/bin/cat \
              /usr/bin/readelf \
-             /usr/bin/chmod
+             /usr/bin/chmod \
+             /usr/lib/7zip
              # bundling 'file' doesn't work due to Arch's upstream bug, so I'll skip it, so it will be used from the host if available
              # https://bbs.archlinux.org/viewtopic.php?pid=2274027#p2274027
              #
              # bundling 'uname' doesn't make sense, this should be done in Python directly, idk why's this used from the host (upstream is even worse in using less portable 'arch')
-             # bundling '7zip' doesn't work for extracting AppImages, but simple squashfs, dwarfs and AppImage extract works, so idk why this is used at all, anyway, this will get used from the host if available
              
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
