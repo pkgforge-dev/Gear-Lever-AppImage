@@ -31,14 +31,6 @@ This appimage works without fuse2 as it can use fuse3 instead, it can also work 
   </a>
 </details>
 
-More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
-
 ---
 
-## Known quirk
-
-- This AppImage has a mandatory dependency on `file` and `uname` program from the host system for the AppImage to work (upstream has a mandatory requirement for non-portable `arch` dependency only, while `file` is installed for the flatpak).  
-  `7z` is an optional dependency for extracting AppImages, as extracting AppImages works through `unsquashfs`, `dwarfsextract` and `--appimage-extract` flag.
-  - It is WIP to make those dependencies bundled-in too to get rid of this quirk.  
-    Arch's `file` package has some bug where we wait for it to get fixed, which is filled-in here:  
-    https://bbs.archlinux.org/viewtopic.php?pid=2274027#p2274027
+More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
