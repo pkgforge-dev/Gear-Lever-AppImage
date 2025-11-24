@@ -30,12 +30,13 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/cat \
              /usr/bin/readelf \
              /usr/bin/chmod
-             # bundling 'file' doesn't work due to Arch's upstream bug, so I'll skip it, so it will be used from the host if available
-             # https://bbs.archlinux.org/viewtopic.php?pid=2274027#p2274027
-             #
-             # bundling 'uname' doesn't make sense, this should be done in Python directly, idk why's this used from the host (upstream is even worse in using less portable 'arch')
-             # bundling '7zip' doesn't work for extracting AppImages, but simple squashfs, dwarfs and AppImage extract works, so idk why this is used at all, anyway, this will get used from the host if available
-             
+
+# Bundle static 7zip and file, as stracing it through quick-sharun doesn't give desired results
+wget --retry-connrefused --tries=30 https://pkgs.pkgforge.dev/dl/bincache/x86_64-linux/7z/official/7z/raw.dl -O ./AppDir/bin/7z
+chmod +x ./AppDir/bin/7z
+wget --retry-connrefused --tries=30 https://pkgs.pkgforge.dev/dl/pkgcache/x86_64-linux/file/appimage/ppkg/stable/file/raw.dl -O ./AppDir/bin/file
+chmod +x ./AppDir/bin/file
+
 # Patch Gear Lever to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gearlever"' ./AppDir/bin/gearlever
 sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gearlever

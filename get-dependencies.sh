@@ -8,7 +8,7 @@ echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 make-aur-package dwarfs-bin
 make-aur-package gearlever
-pacman -Syu --noconfirm coreutils binutils gawk 7zip
+pacman -Syu --noconfirm coreutils binutils gawk
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
