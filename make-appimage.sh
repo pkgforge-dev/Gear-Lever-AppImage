@@ -32,9 +32,9 @@ quick-sharun /usr/bin/gearlever \
              /usr/bin/chmod
 
 # Bundle static 7zip and file, as stracing it through quick-sharun doesn't give desired results
-wget --retry-connrefused --tries=30 https://pkgs.pkgforge.dev/dl/bincache/x86_64-linux/7z/official/7z/raw.dl -O ./AppDir/bin/7z
+wget --retry-connrefused --tries=30 "https://pkgs.pkgforge.dev/dl/bincache/$ARCH-linux/7z/official/7z/raw.dl" -O ./AppDir/bin/7z
 chmod +x ./AppDir/bin/7z
-wget --retry-connrefused --tries=30 https://pkgs.pkgforge.dev/dl/pkgcache/x86_64-linux/file/appimage/ppkg/stable/file/raw.dl -O ./AppDir/bin/file
+wget --retry-connrefused --tries=30 "https://pkgs.pkgforge.dev/dl/pkgcache/$ARCH-linux/file/appimage/ppkg/stable/file/raw.dl" -O ./AppDir/bin/file
 chmod +x ./AppDir/bin/file
 
 # Patch Gear Lever to use AppImage's directory
