@@ -11,7 +11,6 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/it.mijorus.gearlever.svg
 export DESKTOP=/usr/share/applications/it.mijorus.gearlever.desktop
 export DEPLOY_SYS_PYTHON=1
-export DEPLOY_OPENGL=1
 export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
 export ANYLINUX_LIB=1
