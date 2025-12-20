@@ -16,7 +16,6 @@ export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
 export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
-export STARTUPWMCLASS=gearlever
 export GTK_CLASS_FIX=1
 
 # Deploy dependencies
