@@ -6,6 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
+make-aur-package parallel-hashmap # for dwarfs
 make-aur-package dwarfs
 make-aur-package python-desktop-entry-lib
 make-aur-package python-ftputil
