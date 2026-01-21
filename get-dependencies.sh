@@ -4,13 +4,14 @@ set -eu
 
 ARCH=$(uname -m)
 
+pacman -Syu --noconfirm coreutils binutils gawk
+
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm coreutils binutils gawk
 make-aur-package dwarfs-bin
 make-aur-package python-desktop-entry-lib
 make-aur-package python-ftputil
