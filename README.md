@@ -25,7 +25,8 @@ AppImage made using [sharun](https://github.com/VHSgunzo/sharun) and its wrapper
 This AppImage doesn't require FUSE to run at all, thanks to the [uruntime](https://github.com/VHSgunzo/uruntime).
 
 This AppImage is also supplied with the seamless self-updater by default, so any updates to this application won't be missed.  
-Self-updater doesn't run if AppImage managers like [am](https://github.com/ivan-hc/AM) or [soar](https://github.com/pkgforge/soar) exist, which manage AppImage integration and updates.
+Self-updater doesn't run if AppImage managers like [am](https://github.com/ivan-hc/AM) or [soar](https://github.com/pkgforge/soar) exist, which manage AppImage integration and updates.  
+There is also a prompt and config for opting-out of self-updates if desired.
 
 <details>
   <summary><b><i>Filesize efficiency compared to flatpak</i></b></summary>
