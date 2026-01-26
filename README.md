@@ -1,3 +1,5 @@
+<div align="center">
+
 # Gear Lever AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Gear-Lever-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Gear-Lever-AppImage/releases/latest)
@@ -8,7 +10,11 @@
   <img src="https://raw.githubusercontent.com/mijorus/gearlever/refs/heads/master/data/icons/hicolor/scalable/apps/it.mijorus.gearlever.svg" width="128" />
 </p>
 
-* [Upstream URL](https://github.com/mijorus/gearlever)
+| Latest Stable Release | Upstream URL |
+| :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Gear-Lever-AppImage/releases/latest) | [Click here](https://github.com/mijorus/gearlever) |
+
+</div>
 
 ---
 
