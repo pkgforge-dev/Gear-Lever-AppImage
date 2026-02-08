@@ -4,7 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 
-pacman -Syu --noconfirm coreutils binutils gawk
+pacman -Syu --noconfirm coreutils binutils gawk jq
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
