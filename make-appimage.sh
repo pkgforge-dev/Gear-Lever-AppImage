@@ -13,7 +13,6 @@ export DESKTOP=/usr/share/applications/it.mijorus.gearlever.desktop
 export DEPLOY_PYTHON=1
 export DEPLOY_GTK=1
 export GTK_DIR=gtk-4.0
-export ANYLINUX_LIB=1
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=it.mijorus.gearlever # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
