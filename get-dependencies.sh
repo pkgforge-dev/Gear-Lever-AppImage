@@ -15,4 +15,6 @@ echo "---------------------------------------------------------------"
 make-aur-package dwarfs-bin
 make-aur-package python-desktop-entry-lib
 make-aur-package python-ftputil
-make-aur-package gearlever
+VER=$(curl -s https://api.github.com/repos/mijorus/gearlever/releases/latest | jq -r .tag_name)
+SHA=$(curl -L --silent https://github.com/mijorus/gearlever/archive/refs/tags/${VER}.tar.gz | sha256sum | awk '{print $1}')
+PRE_BUILD_CMDS="sed -i \"s|pkgver=.*|pkgver=${VER}|g\" ./PKGBUILD && sed -i \"s|sha256sums=.*|sha256sums=('${SHA}')|g\" ./PKGBUILD" make-aur-package gearlever
